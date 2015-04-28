@@ -1,0 +1,71 @@
+body.mobile {
+  // .logo {
+  //   @include animation( fade 1.5s forwards);
+  // }
+  .parallax-window {
+    @include media(max-height 600px) {
+      padding: 0;
+      height: 10em;
+    }
+    .parallax-content {
+      @include media(max-height 600px) {
+        padding: 0;
+      }
+      .logo, .logo2 {
+        opacity: 0;
+        .bl, .ul, .ur, .br {
+          opacity: 1;
+        }
+        .circ {
+          @include transform( scaleX(1) scaleY(1) );
+        }
+        @include media(max-height 600px) {
+          height: 150px;
+          padding: 0;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .content .primary .intro {
+    margin: 0 auto;
+    .about-intro {
+      // opacity: 1;
+    }
+  }
+
+  .flex-boxes {
+    .flex-box {
+      margin-bottom: 5em !important;
+      background-size: auto 100% !important;
+
+      .info {
+        position: absolute;
+        top: 100%;
+        margin-top: 1em;
+        @include transform(scale(1) rotate(0deg));
+
+        h1 {
+          display: inline-block;
+          font-size: 1em;
+          color: $rd-medium-blue;
+          opacity: 1;
+        }
+
+        i {
+          display: none;
+          visibility: hidden;
+        }
+      }
+      
+      &:focus, &:hover {
+        h1 {
+          color: $rd-green;
+        }
+        .cover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

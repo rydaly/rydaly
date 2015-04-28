@@ -1,0 +1,35 @@
+.contact {
+  padding: 2em;
+  margin-bottom: 4em;
+  background-color: $base-background-color;
+  color: $rd-medium-blue;
+  
+  .social {
+    margin-top: 1em;
+    text-align: center;
+    
+    a {
+      color: $rd-medium-blue;
+      
+      &:hover {
+        color: $rd-green;
+      }
+    }
+    
+    i {
+      font-size: 1.2em;
+      padding: 0 0.4em;
+    }
+    
+    li {
+      font-size: 1.2em;
+      display: inline;
+      margin: 0.2em;
+    }
+  }
+  
+  h5, h6 {
+    font-weight: 700;
+    text-align: left;
+  }
+}

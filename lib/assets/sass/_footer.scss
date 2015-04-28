@@ -1,0 +1,57 @@
+footer {
+  position: relative;
+  height: 24em;
+  color: $base-background-color;
+  text-align: center;
+  background: url("../img/rd_bg.png") repeat;
+  background-position: center;
+  background-size: 250px 250px;
+  background-color: black;
+
+  .cover {
+    @include position(absolute, 0px 0px 0px 0px);
+    height: 100%;
+    @include linear-gradient($gradient-vertical-angle, transparentize(black, 0.9), transparentize($rd-dark-blue, $gradient-transparency-top));
+    z-index: 0;
+
+    &:after {
+      @include linear-gradient($gradient-horizontal-angle, transparentize($rd-dark-blue, $gradient-transparency-right), transparentize(black, 0.9));
+      @include position(absolute, 0px 0px 0px 0px);
+      content: '';
+      display: block;
+      border-top-left-radius: 0;
+      border-bottom-right-radius: 0;
+      @include transition(all, 0.2s ease-in-out);
+    }
+  }
+
+  .colophon {
+    position: absolute;
+    width: 100%;
+    margin-top: $base-margin;
+    z-index: 1;
+
+    span {
+      display: inline-block;
+      font-family: $sans-serif;
+      font-size: 2em;
+      font-weight: 200;
+      vertical-align: middle;
+    }
+    i {
+      display: inline-block;
+      font-size: 1em;
+      vertical-align: middle;
+      margin: 0 1em;
+    }
+    p {
+      font-size: 0.8em;
+    }
+    .glco {
+      display: block;
+      width: 250px;
+      height: 166px;
+      margin: 0 auto 1em;
+    }
+  }
+}

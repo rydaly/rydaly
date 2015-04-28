@@ -1,0 +1,387 @@
+.wf-loading {
+  .logo {
+    opacity: 0;
+  }
+  .content {
+    opacity: 0;
+  }
+}
+
+
+.wf-active {
+  .content {
+    @include animation( fade 0.5s forwards);
+  }
+}
+
+.no-js {
+
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  
+  p {
+    margin: 0 0.4em;
+  }
+
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+.down-arrow {
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  display: block;
+  position: fixed;
+  height: 25px; 
+  width: 100%;
+  bottom: 15px;
+  text-align: center;
+  font-size: 1.5em;
+  &.animate {
+    @include animation( showFade 4s 10s 4 ease-in-out);
+  }
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+
+  h2, h3, h4 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .primary {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 575px;
+    padding-bottom: 3em;
+    overflow: hidden;
+    z-index: 1;
+
+    .intro {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 0 1em;
+      margin: 3em auto;
+      text-align: center;
+      background: $rd-sandy;
+
+      .aligner {
+
+        .about-intro {
+          opacity: 0;
+          h1 {
+            font-size: 1.6em;
+            font-weight: 200;
+            color: $rd-medium-blue;
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        .about-more {
+          opacity: 0;
+          i {
+            position: relative;
+            color: $rd-medium-blue;
+            font-size: 2em;
+            margin: 1em auto 0.7em;
+          }
+
+          p {
+            opacity: 0;
+            pointer-events: none;
+            font-size: 1.2em;
+            color: lighten($rd-medium-blue, 30);
+            width: 95%;
+            font-weight: 400;
+            font-style: italic;
+            margin: -0.5em auto 0;
+            height: 0;
+            @include transition( all, 0.5s );
+
+            @include media($medium-screen) {
+              width: 60%;
+            }
+          }
+
+          &:hover, &:focus {
+            p {
+              height: 5em;
+              opacity: 1;
+              margin: 0 auto;
+              @include transition( all, 0.5s );
+            }
+          }
+        }
+
+        .svg-container {
+          -webkit-transform: translateZ(0);
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 4em;
+
+          .bi, .mtm, .ce, .dt, .wc, .sp {
+            position: absolute;
+            display: block;
+            margin: 1em auto;
+            height: 4em;
+            width: 100%;
+          }
+
+          .bi {
+            opacity: 0;
+
+            path {
+              stroke-width: 1;
+              stroke: $rd-red;
+            }
+          }
+
+          .mtm {
+            opacity: 0;
+
+            path {
+              stroke-width: 1;
+              stroke: $rd-red;
+            }
+          }
+
+          .ce {
+            opacity: 0;
+
+            path {
+              stroke-width: 1;
+              stroke: $rd-red;
+            }
+          }
+
+          .dt {
+            opacity: 0;
+
+            path {
+              stroke-width: 1;
+              stroke: $rd-red;
+            }
+          }
+
+          .sp {
+            opacity: 0;
+
+            path {
+              stroke-width: 1;
+              stroke: $rd-red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .secondary {
+    position: relative;
+    z-index: 3;
+  }
+
+  .main {
+    background-color: $base-background-color;
+    font-family: $base-font-family;
+    width: 100%;
+    z-index: 9;
+    font-size: 1.2em;
+    position: relative;
+
+    .work {
+      position: relative;
+    }
+
+    @include media( $medium-screen ) {
+  
+    }
+  }
+}
+
+.flex-boxes {
+  @include clearfix;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(stretch);
+  @include flex-wrap(wrap);
+  
+  clear: both;
+  text-align: center;
+  padding: 1em;
+
+  a {
+    text-decoration: none;
+  }
+
+  .flex-box {
+    @include transition (all 0.2s ease-in-out);
+    @include flex(2 2 $flex-box-width);
+    @include align-self(stretch);
+    background: $flex-box-background;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    position: relative;
+    display: block;
+    height: $flex-box-height;
+    margin: $flex-box-gutter;
+    -webkit-box-shadow: 6px 6px 10px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 6px 6px 10px 0px rgba(0,0,0,0.08);
+    box-shadow: 6px 6px 10px 0px rgba(0,0,0,0.08);
+
+    @include media( $large-screen ) {
+      @include flex(2 2 18em);
+    }
+
+    .info {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      margin-top: 20%;
+      padding: 0 1em;
+      z-index: 9;
+      @include transform(scale(0.8) rotate(0deg));
+      @include transition(all, 0.2s ease-in-out);
+      @include media($flex-break) {
+        margin-top: 25%;
+      }
+    }
+
+    h1, h6, i {
+      color: $base-background-color;
+      font-size: 1.26em;
+      font-weight: 200;
+      opacity: 0;
+      pointer-events: none;
+      @include transition(all, 0.2s ease-in-out);
+    }
+
+    h6 {
+      display: none;
+    }
+
+    .cover {
+      display: block;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      border-top-left-radius: 0;
+      border-bottom-right-radius: 0;
+      @include position(absolute, 0px 0px 0px 0px);
+      @include linear-gradient($gradient-vertical-angle, transparentize($gradient-color-bottom, $gradient-transparency-bottom), transparentize($gradient-color-top, $gradient-transparency-top));
+      @include transition(all, 0.2s ease-in-out);
+
+      &:after {
+        @include position(absolute, 0px 0px 0px 0px);
+        background-color: transparentize($rd-medium-blue, 0.1);
+        content: '';
+        display: block;
+        color: white;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+        @include transition(all, 0.2s ease-in-out);
+      }
+    }
+
+    &.fc {
+      background: url("../img/projects/fc/fc.jpg") no-repeat;
+      background-position: center center;
+      background-size: auto $flex-box-background-size;
+    }
+
+    &.clpj {
+      background: url("../img/projects/clpj/clpj.jpg") no-repeat;
+      background-position: center center;
+      background-size: auto $flex-box-background-size;
+    }
+
+    &.divvy {
+      background: url("../img/projects/divvy/divvy_01.jpg") no-repeat;
+      background-position: center center;
+      background-size: auto $flex-box-background-size;
+    }
+
+    &.moto {
+      background: url("../img/projects/moto/motox_02.jpg") no-repeat;
+      background-position: center center;
+      background-size: auto $flex-box-background-size;
+    }
+
+    &.samsung {
+      background: url("../img/projects/samsung/gs4_01.jpg") no-repeat;
+      background-position: center center;
+      background-size: auto $flex-box-background-size;
+    }
+
+    &.bb {
+      background: url("../img/projects/bb/bold_01.jpg") no-repeat;
+      background-position: center center;
+      background-size: auto $flex-box-background-size;
+    }
+
+    &:focus ~ .modal {
+      opacity: 1;
+      visibility: visible;
+      @include transition(all, 0.2s ease-in-out);
+    }
+        
+    &:focus, &:hover {
+      border-top-left-radius: $flex-box-border-radius;
+      border-bottom-right-radius: $flex-box-border-radius;
+      background-size: auto 100%;
+      @include transition(all, 0.2s ease-in-out);
+      
+      .info {
+        @include transform(scale(1) rotate(0deg));
+        @include transition(all, 0.2s ease-in-out);
+      }
+
+      .cover {
+        border-top-left-radius: $flex-box-border-radius;
+        border-bottom-right-radius: $flex-box-border-radius;
+        opacity: 1;
+        @include transition(all, 0.2s ease-in-out);
+        
+        &:after {
+          border-top-left-radius: $flex-box-border-radius;
+          border-bottom-right-radius: $flex-box-border-radius;
+          @include transition(all, 0.2s ease-in-out);
+        }
+      }
+
+      h1, i {
+        opacity: 1;
+        @include transition(all, 0.2s ease-in-out);
+      }
+    }
+  }
+}
+
+@include keyframes( fade ) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@include keyframes( showFade ) {
+  0% { opacity: 0; bottom: 40px; }
+  20% { opacity: 1; bottom: 15px; }
+  60% { opacity: 1; bottom: 15px; }
+  80% { opacity: 0; bottom: -10px; }
+  100% { opacity: 0; bottom: -10px; }
+}

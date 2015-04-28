@@ -1,0 +1,190 @@
+.fc-modal, 
+.clpj-modal, 
+.divvy-modal, 
+.momentum-modal, 
+.samsung-modal, 
+.moto-modal, 
+.bb-modal {
+  @include position( fixed, 0px 0px 0px 0px );
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: -9999999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  display: none;
+  @include transition(all, 0.2s ease-in-out);
+
+  .modal-info {
+    font-size: 1.2em;
+    width: 100%;
+    max-width: 1000px;
+    margin: $modal-padding auto;
+    padding: 0;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto $modal-padding;
+    padding: 0;
+
+    .section {
+      margin-bottom: 6em;
+
+      h4 {
+        font-weight: 400;
+      }
+    }
+
+    img {
+      display: block;
+      margin: 2em auto;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .btn-container {
+      position: relative;
+      
+      button {
+        @include flat(transparent);
+        position: relative;
+        font-weight: 400;
+        display: block;
+        padding: 0.7em 1em;
+        margin: 1em auto;
+        border: 2px solid $rd-medium-blue;
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        @include transition(all, 0.2s ease-in-out);
+
+        a {
+          text-decoration: none;
+          color: $rd-medium-blue;
+          @include transition(all, 0.2s ease-in-out);
+        }
+
+        &:hover, &:focus, &:focus:not(:disabled) {
+          a {
+            color: $base-background-color;
+            @include transition(all, 0.2s ease-in-out);
+          }
+          outline: none;
+          background-color: $rd-medium-blue;
+          // border-top-left-radius: 10px;
+          // border-bottom-right-radius: 10px;
+          @include transition(all, 0.2s ease-in-out);
+        }
+      }
+    }
+  }
+}
+
+.fc-modal:target, 
+.clpj-modal:target, 
+.divvy-modal:target, 
+.momentum-modal:target, 
+.samsung-modal:target, 
+.moto-modal:target, 
+.bb-modal:target {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  z-index: 9999999;
+  pointer-events: auto;
+
+  div:target {
+      opacity: 0.5;
+  }
+}
+
+.fc-modal > div, 
+.clpj-modal > div, 
+.divvy-modal > div, 
+.momentum-modal > div, 
+.samsung-modal > div, 
+.moto-modal > div, 
+.bb-modal > div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    background: transparentize($base-background-color, 0.1);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.close {
+  background: $modal-close-bg-color;
+  cursor: pointer;
+  z-index: 999999;
+  @include position(fixed, 1em 1em null null);
+  @include size(2em);
+  @include transition(all, 0.25s ease-in-out);
+
+  &:after, &:before {
+    @include position(absolute, 0 0 0 50%);
+    @include transform(rotate(45deg));
+    @include size(0.15em 2em);
+    background: $modal-close-color;
+    content: '';
+    display: block;
+    margin: 0 0 0 -1px;
+    @include transition(all, 0.25s ease-in-out);
+  }
+
+  &:hover:after, &:hover:before {
+    background: $rd-red;
+    @include transition(all, 0.25s ease-in-out);
+  }
+
+  &:hover:after {
+    @include transform(rotate(135deg));
+    @include transition(all, 0.25s ease-in-out);
+  }
+
+  &:hover:before {
+    @include transform(rotate(-135deg));
+    @include transition(all, 0.25s ease-in-out);
+  }
+
+  &:before {
+    @include transform(rotate(-45deg));
+    @include transition(all, 0.25s ease-in-out);
+  }
+
+  @include media($medium-screen) {
+    background: transparent;
+  }
+}
+
+.video-wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+  position: relative;
+
+  embed, object, iframe, video {
+    @include position(absolute, 0px null null 0px);
+    @include size(100%);
+  }
+
+  .sublimevideo-YoutubeVideo iframe {
+    @include position(relative);
+  }
+}
+
+.js-fade-element-hide {
+  opacity: 0;
+}
+
+.js-fade-element-show {
+  opacity: 1;
+  @include transition (opacity 0.5s ease-in-out);
+}

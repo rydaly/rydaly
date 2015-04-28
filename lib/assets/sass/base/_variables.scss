@@ -1,0 +1,113 @@
+// Typography
+$sans-serif:                    "brandon-grotesque", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$serif:                         Georgia, Cambria, "Times New Roman", Times, serif;
+$base-font-family:              "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$header-font-family:            $sans-serif;
+
+// Sizes
+$base-font-size:                1em;
+$base-line-height:              $base-font-size * 1.5;
+$unitless-line-height:          $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
+$header-line-height:            $base-font-size * 1.25;
+$base-border-radius:            0;
+$base-vertical-spacing:         0.5em;
+$base-margin:                   3.5em;
+
+$h1-font-size:                  $base-font-size * 2;
+$h2-font-size:                  $base-font-size * 1.8;
+$h3-font-size:                  $base-font-size * 1.6;
+$h4-font-size:                  $base-font-size * 1.4;
+$h5-font-size:                  $base-font-size * 1.2;
+$h6-font-size:                  $base-font-size;
+
+// Colors
+$rd-light-blue:                 #729aad;
+$rd-medium-blue:                #4a5b63;
+$rd-dark-blue:                  #2d3537;
+$rd-ultra-dark-blue:            darken(saturate($rd-dark-blue, 10), 30);
+$rd-green:                      #6b8f38;
+$rd-dark-brown:                 #52493E;
+$rd-alt-blue:                   #688C9E;
+
+$rd-orange:                     #AF7938;
+$rd-deep-red:                   #783221;
+$rd-red:                        #CC675B;
+$rd-reddish:                    #6b4242;
+$rd-deep-green:                 #186F7C;
+$rd-gold:                       #d1a42c;
+$rd-drab:                       #959362;
+$rd-sandy:                      #F2F1ED;
+
+$dark-gray:                     #363031;
+$medium-gray:                   #919191;
+$light-gray:                    #ededed;
+$light-red:                     #FBE3E4;
+$light-yellow:                  #FFF6BF;
+$light-green:                   #E6EFC2;
+
+// Background Color
+$base-background-color:         $rd-sandy;
+$base-body-color:               #eeeef5;
+
+// Font Colors
+$base-font-color:               $rd-dark-blue;
+$base-accent-color:             $rd-green;
+
+// Link Colors
+$base-link-color:               $base-accent-color;
+$hover-link-color:              darken($base-accent-color, 15);
+$base-button-color:             $base-link-color;
+$hover-button-color:            $hover-link-color;
+
+// Border color
+$base-border-color:             $light-gray;
+
+// Flash Colors
+$alert-color:                   $light-yellow;
+$error-color:                   $light-red;
+$notice-color:                  lighten($base-accent-color, 40);
+$success-color:                 $light-green;
+
+// Forms
+$form-border-color:             $base-border-color;
+$form-border-color-hover:       darken($base-border-color, 10);
+$form-border-color-focus:       $base-accent-color;
+$form-border-radius:            0;
+$form-box-shadow:               inset 0 1px 3px rgba(0,0,0,0.06);
+$form-box-shadow-focus:         $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-font-size:                $base-font-size;
+$form-font-family:              $sans-serif;
+
+// Animation
+$default-anim-time:             0.1s;
+$default-easing-func:           ease-in-out;
+
+// Parallax
+$parallax-window-height:        15em;
+$parallax-background-height:    100%;
+
+// Gradients
+$gradient-color-top:            lighten($rd-medium-blue, 10); 
+$gradient-transparency-top:     0.7;
+$gradient-color-bottom:         darken($rd-medium-blue, 10); 
+$gradient-transparency-bottom:  0.7;
+$gradient-vertical-angle:       0deg;
+$gradient-color-left:           lighten($rd-medium-blue, 10); 
+$gradient-transparency-left:    0.7;
+$gradient-color-right:          darken($rd-medium-blue, 10); 
+$gradient-transparency-right:   0.7;
+$gradient-horizontal-angle:     90deg;
+
+// flex boxes
+$flex-box-background: darken($rd-medium-blue, 10%);
+$flex-box-border-radius: 10px;
+$flex-box-gutter: 1em;
+$flex-box-width: 15em;
+$flex-box-height: 15em;
+$flex-box-background-size: 100%;
+
+// Modals
+$modal-padding: 3em;
+$modal-padding-sm: 1em;
+$modal-close-color: $rd-medium-blue;
+$modal-close-bg-color: $base-background-color;
