@@ -1,7 +1,4 @@
 body.mobile {
-  // .logo {
-  //   @include animation( fade 1.5s forwards);
-  // }
   .parallax-window {
     @include media(max-height 600px) {
       padding: 0;
@@ -29,9 +26,6 @@ body.mobile {
   }
   .content .primary .intro {
     margin: 0 auto;
-    .about-intro {
-      // opacity: 1;
-    }
   }
 
   .flex-boxes {
@@ -66,6 +60,30 @@ body.mobile {
           opacity: 0.5;
         }
       }
+    }
+  }
+}
+
+.no-js {
+  body.mobile {
+    .parallax-window .parallax-content {
+      .logo {
+        opacity: 1;
+      }
+      .logo2 {
+        display: none;
+      }
+    }
+  }
+  .content .primary .intro .aligner {
+    .about-intro {
+      opacity: 1;
+    }
+    .svg-container .bi {
+      opacity: 1;
+    }
+    .about-more {
+      opacity: 1;
     }
   }
 }

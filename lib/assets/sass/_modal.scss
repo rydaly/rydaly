@@ -180,11 +180,11 @@
   }
 }
 
-.js-fade-element-hide {
-  opacity: 0;
-}
+// .js-fade-element-hide {
+//   opacity: 0;
+// }
 
-.js-fade-element-show {
-  opacity: 1;
-  @include transition (opacity 0.5s ease-in-out);
-}
+// .js-fade-element-show {
+//   opacity: 1;
+//   @include transition (opacity 0.5s ease-in-out);
+// }

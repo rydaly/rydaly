@@ -25,8 +25,8 @@
         })(document);
     </script>
     <style type="text/css">
-        .content, .logo, .logo2, .about-intro, .bi, .about-more, .about-more p, .down-arrow { opacity: 0; }
-        .no-js .content, .no-js .logo, .no-js .about-intro, .no-js .bi, .no-js .about-more { opacity: 1; }
+        .content, .logo, .logo2, .about-intro, .bi, .about-more, .about-more p, .down-arrow, .secondary { opacity: 0; }
+        .no-js .content, .no-js .logo, .no-js .about-intro, .no-js .bi, .no-js .about-more, .no-js .content .secondary { opacity: 1; }
     </style>
     <link rel="stylesheet" href="dist/css/style.css">
 </head>
@@ -35,10 +35,10 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <div class="down-arrow animate">
+        <i class="fa fa-arrow-down"></i>
+    </div>
     <div class="content">
-        <!-- <div class="down-arrow animate">
-            <i class="fa fa-arrow-circle-down"></i>
-        </div> -->
         <div class="primary">
             <div id="parallax-window" class="parallax-window">
                 <div id="parallax-content" class="parallax-content">
