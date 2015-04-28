@@ -63,27 +63,3 @@ body.mobile {
     }
   }
 }
-
-.no-js {
-  body.mobile {
-    .parallax-window .parallax-content {
-      .logo {
-        opacity: 1;
-      }
-      .logo2 {
-        display: none;
-      }
-    }
-  }
-  .content .primary .intro .aligner {
-    .about-intro {
-      opacity: 1;
-    }
-    .svg-container .bi {
-      opacity: 1;
-    }
-    .about-more {
-      opacity: 1;
-    }
-  }
-}
