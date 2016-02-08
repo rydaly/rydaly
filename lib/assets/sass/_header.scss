@@ -49,27 +49,27 @@
 
     .ul {
       opacity: 0;
-      @include transform( translateY(34px) translateX(15px) );
+      // @include transform( translateY(34px) translateX(15px) );
     }
 
     .ur {
       opacity: 0;
-      @include transform( translateY(35px) translateX(-15px) );
+      // @include transform( translateY(35px) translateX(-15px) );
     }
 
     .bl {
       opacity: 0;
-      @include transform( translateY(-35px) translateX(15px) );
+      // @include transform( translateY(-35px) translateX(15px) );
     }
 
     .br {
       opacity: 0;
-      @include transform( translateY(-34px) translateX(-15px) );
+      // @include transform( translateY(-34px) translateX(-15px) );
     }
 
-    .circ {
-      @include transform( scaleX(0) scaleY(0) );
-    }
+    // .circ {
+    //   @include transform( scaleX(0) scaleY(0) );
+    // }
   }
 }
 
